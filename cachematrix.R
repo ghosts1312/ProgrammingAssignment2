@@ -26,9 +26,15 @@ cacheSolve <- function(x, ...) {
     message("getting cached data")
     return(i)
   }
+  
   data <- x$get() ## if the inverse is not present gets the inverse of given matrix and prints the inverse
   i <- solve(data, ...)
   x$setinverse(i)
   i
         ## Return a matrix that is the inverse of 'x'
 }
+
+##for example
+##a<- matrix(1:4,2,2)
+##Cache <- makeCacheMatrix(a)
+##cacheSolve(Cache)
